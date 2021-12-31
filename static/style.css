@@ -1,0 +1,466 @@
+body{
+    background-color:whitesmoke;
+    align-items: center;
+    
+}
+
+.header {
+    background:#162388; 
+    clear: both;
+    height: 75px;
+}
+
+  
+  #logo {
+    float:left;
+    margin:0;
+    
+  }
+  #navlist {
+    float: right;
+    
+  }
+  li {
+    display: inline;
+    list-style-type: square;
+    padding-right: 20px;
+    
+  }
+  a:link{
+    line-height: 75px;
+    height: 75px;
+    color: whitesmoke ;
+  }
+
+  a:visited{
+    color: whitesmoke;
+  }
+
+  
+  .welcome {
+ margin-left: 600;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ margin-bottom: 0;
+    
+ }
+
+
+
+
+
+
+
+
+ /* .flexbox {
+     display: flex;
+     justify-content: center;
+     
+ }
+ .flex {
+     background-color: rgb(136, 186, 202);
+     margin-left: 75;
+     margin-right: 75;
+     padding-left: 50;
+     padding-right: 50;
+     padding-top: 20;
+     padding-bottom: 20;
+     margin-top: 50;
+ }
+
+ .title{
+     text-align: center;
+     margin-bottom: 40;
+     color: floralwhite;
+ }
+
+ .enter {
+     margin-bottom: 10;
+ }
+
+ .input {
+    width: 300;
+ } */
+
+ .nextR >:link {
+   text-align: center;
+   color: whitesmoke;
+   background-color: #162388;
+   margin-left: 75;
+   padding:10 10 10 10;
+   
+ }
+
+ 
+ 
+
+ /* .submit {
+    text-align: center;
+    padding-top: 30;
+ } */
+
+
+
+
+
+
+ .flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: 200;
+}
+
+.flex {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  margin-left: 0 ;
+  margin-right: 150;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+.input2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+  color: transparent;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color:#162388;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.submitBtn:hover {
+  background-color: #6f71df;
+  transform: translateY(-2px);
+}
+
+.input2:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #162388;
+}
+
+
+
+.input2:focus {
+  border: 2px solid #162388;
+}
+
+.input2:not(:placeholder-shown)+ .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
+
+
+ #success {
+   color: green;
+   text-align: center;
+ }
+
+ #error {
+   color: red;
+   text-align: center;
+ }
+
+
+
+
+
+
+
+ .signupFrm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: 200;
+}
+
+.form {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+.title1 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+.input1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #DADCE0;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+  color: transparent;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color:#162388;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.submitBtn:hover {
+  background-color: #6f71df;
+  transform: translateY(-2px);
+}
+
+.input1:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: #162388;
+}
+
+.input1:focus {
+  border: 2px solid #162388;
+}
+
+
+.input1:not(:placeholder-shown)+ .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.signupFrm1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: 200;
+  margin-top: 150;
+}
+
+
+.signupFrm2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-left: 150;
+  margin-top: 75;
+}
+
+
+.vhlogin {
+  display: flex;
+
+}
+
+.table {
+  
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  /* min-width: 900px; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-container {
+ display: block;
+ margin-left: 15%;
+ margin-right: 15%;
+ }
+
+.row{
+  text-align: center;
+}
+.table thead tr {
+  background-color: #162388;
+  color: #ffffff;
+  text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 10px 10px;
+
+}
+
+.table a:link,
+.table a:visited{
+  color: #5262da;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #162388;
+}
+
+.table tbody tr.row {
+  font-weight: bold;
+  color: #162388;
+}
+
+/* .tablename{
+  margin-left: 400;
+} */
+
+
+.submitBtn1 {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color:#162388;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.submitBtn1:hover,
+.submitBtn2:hover {
+  background-color: #6f71df;
+  transform: translateY(-2px);
+}
+
+.submitBtn2 {
+  
+  border: none;
+  background-color:#162388;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px 30px;
+}
+
+.template{
+  display: flex;
+  
+  
+}
+.venuePic {
+  margin-left: 30;
+  margin-right: 150;
+}
+
+
+
+.signupFrm3 {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  margin-left: 10;
+  
+}
+
+#firstRow {
+  min-width: 100;
+}
