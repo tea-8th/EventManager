@@ -1,0 +1,75 @@
+
+
+{% extends 'background.html' %}
+
+{% block content %}
+<div class="welcome">
+<h1>Welcome to Eventrra</h1>
+</div>
+<div class="flexbox">
+    <div class="flex">
+        <h3 class="title">Login for Event Hosts</h3>
+        <form action="eventHostLogin" method='post'>
+            
+            {% csrf_token %}
+            {% if eh_error %}
+            <h5 id="error">{{eh_error}}</h5>
+            {% endif %}
+            {% if eh_success %}
+            <h5 id="success">{{eh_success}}</h5>
+            {% endif %}
+
+            <div class="inputContainer">
+                <input type="email" name="emailid" class="input2" placeholder="a">
+                <label for="" class="label">Enter Email ID</label>
+              </div>
+        
+              <div class="inputContainer">
+                <input type="password" name="password" class="input2" placeholder="a">
+                <label for="" class="label">Enter Password</label>
+              </div>
+            <!-- <h4 class="enter">Enter Email ID</h4><input class="input" type="email" name="emailid"><br>
+            <h4 class="enter">Enter Password</h4><input class="input" type="password" name="password"><br> -->
+            <!-- <div class="submit">
+            <input type="submit" value="Sign In">
+            </div> -->
+            <input type="submit" class="submitBtn" value="Sign In">
+        </form>
+        <div class="nextR">
+        <a href={% url 'ehregister' %}>Click here to register as Event Host</a>
+        </div>
+    </div>
+    <div class="flex">
+        <h3 class="title">Login for Venue Holders</h3>
+        <form action="venueHolderLogin" method='post'>
+            
+            {% csrf_token %}
+            {% if vh_error %}
+            <h5 id="error">{{vh_error}}</h5>
+            {% endif %}
+            {% if vh_success %}
+            <h5 id="success">{{vh_success}}</h5>
+            {% endif %}
+
+            <div class="inputContainer">
+                <input type="email" name="emailid" class="input2" placeholder="a">
+                <label for="" class="label">Enter Email ID</label>
+              </div>
+        
+              <div class="inputContainer">
+                <input type="password" name="password" class="input2" placeholder="a">
+                <label for="" class="label">Enter Password</label>
+              </div>
+              <input type="submit" class="submitBtn" value="Sign In">
+            <!-- <h4 class="enter">Enter Email ID</h4><input class="input" type="email" name="emailid"><br>
+            <h4 class="enter">Enter Password</h4><input class="input" type="password" name="password"><br>
+            <div class="submit">
+            <input type="submit" value="Sign In"> 
+            </div>-->
+            </form>
+        <div class="nextR">
+        <a  href={% url 'vhregister' %}>Click here to register as Venue Holder</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

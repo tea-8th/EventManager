@@ -1,0 +1,64 @@
+{% extends 'background.html' %}
+
+{% block content %}
+<div class="signupFrm2">
+
+<form class="form" action="venueRegistration" method='post' enctype="multipart/form-data">
+    <h1 class="title1">Add Venue</h1>
+    {% csrf_token %}
+    {% if error %}
+    <h5>{{error}}</h5>
+    {% endif %}
+
+    <div class="inputContainer">
+        <input type="text" name="vname" class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Name</label>
+    </div>
+
+    <div class="inputContainer">
+        <input type="text" name="address"  class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Address</label>
+      </div>
+      <div class="inputContainer">
+        <input type="text" name="venuedesc" class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Description</label>
+    </div>
+
+    <div class="inputContainer">
+        <input type="text" name="venuecost" class="input1" placeholder="a">
+        <label for="" class="label">Enter Renting Cost(per hour)</label>
+      </div>
+      <div class="inputContainer">
+        <input type="text" name="venuecap" class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Capacity</label>
+    </div>
+
+    <div class="inputContainer">
+        <input type="text" name="venuesit" class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Seating Type</label>
+      </div>
+
+      <div class="inputContainer">
+        <input type="text" name="venuefeat" class="input1" placeholder="a">
+        <label for="" class="label">Enter Venue Special Features</label>
+      </div>
+
+    <!-- Enter Venue Name:<input type="text" name="vname"><br>
+    Enter Venue Address:<input type="text" name="address"><br>
+    Enter Venue Description:<input type="text" name="venuedesc"><br>
+    Enter Renting Cost(per hour):<input type="text" name="venuecost"><br>
+    Enter Venue Capacity:<input type="text" name="venuecap"><br>
+    Enter Venue Seating Type:<input type="text" name="venuesit"><br>
+    Enter Venue Special Features:<input type="text" name="venuefeat"><br> -->
+    Select Category:
+    <select name="categories" id="categories">
+        {% for cat in cats %}
+            <option value={{cat.category_id}}>{{cat.category_name}}</option>
+        {% endfor %}
+    </select><br>
+    Upload Venue Image:  <input type="file" name="image">
+    <br>
+    <input type="submit" class="submitBtn">
+</form>
+</div>
+{% endblock %}

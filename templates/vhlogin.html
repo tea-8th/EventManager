@@ -1,0 +1,39 @@
+{% extends 'background.html' %}
+
+{% block content %}
+<div class="vhlogin">
+<div><h1>Hello, {{venueholder.first_name}} {{venueholder.last_name}}</h1></div>
+<div class="submitBtn"><a  href={% url 'ehlogout' %}>Logout</a></div>
+
+</div>
+<a class="submitBtn2" href={% url 'addvenue' %}>Add Venue</a><br>
+
+
+<h2 class="tablename">Your List of Venues</h2>
+    <br>
+    
+    <table class="table">
+<tr>
+    <th id="firstRow">Venue Name</th>
+    <th>Venue Description</th>
+    <th>Venue Address</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+{% for venue in vlist %}
+<tr class="row">
+    
+    <td id="firstRow"><a href="{% url 'eventlist' venue.venue_id %}"> {{venue.venue_name}}</a></td>
+    <td>{{venue.venue_description}}</td>
+    <td>{{venue.venue_address}}</td>
+   <td> <a href="{% url 'editvenue' venue.venue_id %}"><img src="../static/images/edit.png" alt="Edit" width="30" height="30"></a></td>
+   <td> <a href="{% url 'deletevenue' venue.venue_id %}"><img src="../static/images/delete.png" alt="Delete" width="30" height="30"></a></td>
+</tr>
+{% endfor %}
+    </table>
+    
+{% if v_success %}
+<h5>{{v_success}}</h5>
+{% endif %}
+
+{% endblock %}

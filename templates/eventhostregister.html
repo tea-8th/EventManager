@@ -1,0 +1,46 @@
+{% extends 'background.html' %}
+
+{% block content %}
+
+<div class=signupFrm>
+<form class = "form" action="eventHostRegisteration" method='post'>
+    <h1 class="title1">Event Host Registration</h1>
+    {% csrf_token %}
+    {% if error %}
+    <h5>{{error}}</h5>
+    {% endif %}
+
+    <div class="inputContainer">
+        <input type="text" name="fname" class="input1" placeholder="a">
+        <label for="" class="label">Enter First Name</label>
+    </div>
+
+    <div class="inputContainer">
+        <input type="text" name="lname" class="input1" placeholder="a">
+        <label for="" class="label">Enter Last Name</label>
+      </div>
+
+      <div class="inputContainer">
+        <input type="email" name="emailid" class="input1" placeholder="a">
+        <label for="" class="label">Enter Email ID</label>
+      </div>
+
+      <div class="inputContainer">
+        <input type="password" name="password" class="input1" placeholder="a">
+        <label for="" class="label">Enter Password</label>
+      </div>
+
+      <div class="inputContainer">
+        <input type="password" name="conpassword" class="input1" placeholder="a">
+        <label for="" class="label">Confirm Password</label>
+      </div>
+
+    <!-- Enter First Name:<input type="text" name="fname"><br>
+    Enter Last Name:<input type="text" name="lname"><br>
+    Enter EmailID:<input type="email" name="emailid"><br>
+    Enter Password:<input type="password" name="password"><br>
+    Confirm Password:<input type="password" name="conpassword"><br> -->
+    <input type="submit" class="submitBtn" value="Sign up">
+</form>
+</div>
+{% endblock %}

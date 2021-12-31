@@ -1,0 +1,26 @@
+{% load static%}
+<html>
+    <head>
+        <title>Eventrra</title>
+        <link rel="stylesheet" href='{%static "style.css" %}'>
+        
+    </head>
+    
+    <body>
+        <div class="header">
+          <a  href="#">
+            <img id="logo" src="\static\images\logo.png">
+          </a>
+            <ul id="navlist">
+              <li id="active"><a href="#" id="current">About Us</a></li>
+              <li id="active"><a  href="mailto:hardikshah450.hs@gmail.com">Contact</a></li>
+            </ul>
+          </div>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+    <footer>
+
+    </footer>
+</html>

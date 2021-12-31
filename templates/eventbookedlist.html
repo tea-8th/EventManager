@@ -1,0 +1,22 @@
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h2 class="tablename">List of Booked Events</h2><br>
+<table class="table">
+    <tr>
+        <th id="firstRow">Event Date</th>
+        <th>Event Time</th>
+        <th>Event Attendees</th>
+        <th>Contact Event Holder</th>
+    </tr>
+{% for event in elist %}
+<tr class="row">
+    <td id="firstRow">{{event.event_date}} / {{event.event_month}} </td>
+    <td> {{event.start_time}}:00 to {{event.end_time}}:00</td>
+    <td> {{event.event_attendees}}</td>
+    <td><a href="{% url 'contact' event.event_host.eventhost_id %}"><img src="../static/images/contact.png" alt="Edit" width="30" height="30"></a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

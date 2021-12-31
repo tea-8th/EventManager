@@ -1,0 +1,113 @@
+{% extends 'background.html' %}
+
+{% block content %}
+
+<h1>Venue Template: {{venue.venue_name}}</h1>
+<div class="template">
+<div class="venuePic">
+<img src="{{venue.venue_image.url}}" height="400" width="600">
+</div>
+<div class="display">
+    <table class="table">
+        <tr>
+            <td>Venue Name</td>
+            <td>{{venue.venue_name}}</td>
+        </tr>
+        <tr>
+            <td>Venue Address</td>
+            <td>{{venue.venue_address}}</td>
+        </tr>
+        <tr>
+            <td>Venue Description</td>
+            <td>{{venue.venue_description}}</td>
+        </tr>
+        <tr>
+            <td>Venue Cost</td>
+            <td>{{venue.venue_cost}}</td>
+        </tr>
+        <tr>
+            <td>Venue Capacity</td>
+            <td>{{venue.venue_capacity}}</td>
+        </tr>
+        <tr>
+            <td>Venue Seating Type</td>
+            <td>{{venue.venue_seating_type}}</td>
+        </tr> 
+        <tr>
+            <td>Venues' Sp.Features</td>
+            <td>{{venue.venue_special_features}}</td>
+        </tr>
+        <tr>
+            <td>Category Name</td>
+            <td>{{category.category_name}}</td>
+        </tr>
+        <tr>
+            <td>Venue Holder Name</td>
+            <td>{{venueholder.first_name}}</td>
+        </tr>
+        <tr>
+            <td>Venue Holder Contact</td>
+            <td>{{venueholder.email}}</td>
+        </tr>
+        
+    
+    </table>
+</div>
+</div>
+
+
+<div class="signupFrm3">
+
+<form action="eventBooking" method="post">
+    <h1 class="title1">For Booking: </h1>
+    {% csrf_token %}
+    Date Format: 1,2,3....
+    <div class="inputContainer">
+        <input type="number" name="date"min="1" max="31" class="input1" placeholder="a">
+        <label for="" class="label">Enter Date for Event</label>
+        
+    </div>
+    
+    Month Format: 1,2,3,....
+    <div class="inputContainer">
+        <input type="number" name="month"min="1" max="12" class="input1" placeholder="a">
+        <label for="" class="label">Enter Month for Event</label>
+        
+    </div>
+    
+    It is based on 24 Hour time format Eg: 14 should be written in place of 2pm
+    <div class="inputContainer">
+        <input type="number" name="stime"min="0" max="23" class="input1" placeholder="a">
+        <label for="" class="label">Enter Start Time for Event(Starting Hour)</label>
+        
+    </div>
+    
+    It is based on 24 Hour time format Eg: 14 should be written in place of 2pm
+    <div class="inputContainer">
+        <input type="number" name="etime"min="0" max="23" class="input1" placeholder="a">
+        <label for="" class="label">Enter End Time for Event(Ending Hour)</label>
+        
+    </div>
+
+    Example: Event at 31st October starting from 11pm and ending at 1am should be (31,10,23,1)
+
+    <div class="inputContainer">
+        <input type="number" name="attendees" class="input1" placeholder="a">
+        <label for="" class="label">Enter Number of Attendees</label>
+        
+    </div>
+
+
+    <!-- Enter Date for Event: <input type="number" name="date" min="1" max="31">(Date Format: 1,2,3....)<br>
+    Enter Month for Event: <input type="number" name="month" min="1" max="12">(Month Format: 1,2,3,....)<br>
+    Enter Start Time for Event(Starting Hour): <input type="number" name="stime" min="0" max="23">(It is based on 24 Hour time format Eg: 14 should be written in place of 2pm)<br>
+    Enter End Time for Event(Ending Hour): <input type="number" name="etime" min="0" max="23">(It is based on 24 Hour time format Eg: 14 should be written in place of 2pm)<br>
+    Example: Event at 31st October starting from 11pm and ending at 1am should be (31,10,23,1)
+    <br>Enter Number of Attendees: <input type="number" name="attendees"> -->
+
+    <input type="submit" class="submitBtn">
+</form>
+</div>
+<h6>Disclaimer: Booking can only be done between date after the present date and present date of next year.</h6>
+
+{% endblock %}

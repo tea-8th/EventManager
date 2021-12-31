@@ -1,0 +1,32 @@
+{% extends 'background.html' %}
+
+{% block content %}
+
+<div class="vhlogin">
+    <div><h1>Hello, {{eventhost.first_name}} {{eventhost.last_name}}</h1></div>
+    <div class="submitBtn"><a href={% url 'ehlogout' %}>Logout</a></div>
+    
+</div>
+
+
+<h2 class="tablename">List of Venues</h2>
+    <br>
+    <table class="table">
+<tr>
+    <th id="firstRow">Venue Name</th>
+    <th>Venue Description</th>
+    <th>Venue Address</th>
+    
+</tr>
+{% for venue in allvlist %}
+<tr class="row">
+    <td id="firstRow"><a href="{% url 'venuedynamic' venue.venue_id %}">
+    {{venue.venue_name}}</a></td>
+    <td>{{venue.venue_description}}</td>
+    <td>{{venue.venue_address}}</td>
+   </tr>
+{% endfor %}
+    </table>
+
+    
+{% endblock %}
